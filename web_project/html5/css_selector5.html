@@ -1,15 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        ul {
+            /* border: black 3px solid; */
+        }
+        li {
+            list-style: none;
+            float:left;
+            width: 100px;
+            text-align: center;
+            color: wheat;
+        }
+
+        li:first-child {
+            background-color: forestgreen;
+            border-radius: 10px 0 10px 0;
+        }
+        li:last-child {
+            background-color: yellowgreen;
+        }
+        li:nth-child(2n):hover {
+            font-size: 30px;
+        }
+        li:nth-child(2n-1):hover {
+            font-size: 120px;
+        }
+        li:nth-child(2):hover {
+            background-color: blueviolet;
+        }
+        li:nth-child(3):hover {
+            background-color: brown;
+        }
+        li:nth-child(4):hover {
+            background-color: burlywood;
+        }
+        
+    </style>
+    <style>
+        table {
+            display: none;
+        }
+        tr:nth-child(2n):hover {
+            background-color: bisque;
+        }
+        tr:first-child {
+            background-color: aquamarine;
+        }
+    </style>
+    <style>
+        p::first-letter {
+            font-size: 40px;
+        }
+        p::selection {
+            background-color: yellowgreen;
+            color: brown;
+        }
+    </style>
 </head>
+
 <body>
-    <li>333</li>
-    <li>4444</li>
-    <li>55555</li>
-    <li>666666</li>
-    <li>7777777</li>
+    <ul>
+        <li>333</li>
+        <li>4444</li>
+        <li>55555</li>
+        <li>666666</li>
+        <li>7777777</li>
+    </ul>
+    <br><hr>
+    <table border="300">
+        <tr>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>5</td>
+        </tr>
+    </table>
+    <br><hr>
+    <p>김밥입니까?</p>
 </body>
+
 </html>
