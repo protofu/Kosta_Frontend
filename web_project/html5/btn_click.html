@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #btn {
+            margin: 50px;
+            background-color: #FF7777;
+            width: 250px;
+            height: 100px;
+            border: beige 20px solid;
+            border-radius: 40px;
+        }
+
+        #btn>a {
+            display: block;
+            text-align: center;
+            line-height: 100px;
+            height: 100px;
+            color: #FFF;
+            font-size: 48px;
+            font-style: italic;
+            font-weight: bold;
+            font-family: 'Titan One', cursive;
+            text-shadow: 0 1px 0 #CCC,
+                0 2px 0 #CCC,
+                0 3px 0 #CCC,
+                0 4px 0 #CCC,
+                0 5px 0 #CCC,
+                0 6px 0 transparent,
+                0 7px 0 transparent,
+                0 8px 0 transparent,
+                0 9px 0 transparent,
+                0 10px 10px rgba(0, 0, 0, .4);
+            text-decoration: none;
+        }
+
+        #btn>a>div p {
+            display: inline;
+        }
+
+        /* #btn>a>div:hover {
+            position: relative;
+            animation: bounce .3s ease infinite alternate;
+        } */
+
+        #btn a div:hover p:nth-child(1) { animation: bounce .3s ease infinite alternate; }
+        #btn a div:hover p:nth-child(2) { animation: bounce .3s ease infinite alternate; animation-delay: .1s; }
+        #btn a div:hover p:nth-child(3) { animation: bounce .3s ease infinite alternate; animation-delay: .2s; }
+        #btn a div:hover p:nth-child(4) { animation: bounce .3s ease infinite alternate; animation-delay: .3s; }
+        #btn a div:hover p:nth-child(5) { animation: bounce .3s ease infinite alternate; animation-delay: .4s; }
+
+
+        @keyframes bounce {
+            100% {
+                top: -20px;
+                text-shadow: 0 1px 0 #CCC,
+                    0 2px 0 #CCC,
+                    0 3px 0 #CCC,
+                    0 4px 0 #CCC,
+                    0 5px 0 #CCC,
+                    0 6px 0 #CCC,
+                    0 7px 0 #CCC,
+                    0 8px 0 #CCC,
+                    0 9px 0 #CCC,
+                    0 50px 25px rgba(0, 0, 0, .2);
+            }
+        }
+    </style>
+    <style>
+        .fs-32 {
+            font-size: 32px;
+        }
+
+        .fs-2m {
+            font-size: 2em;
+        }
+
+        .fs-lg {
+            font-size: large;
+        }
+
+        .fs-sm {
+            font-size: small;
+        }
+
+        .font-gs {
+            font-family: '궁서체';
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="fs-32">HERE</h1>
+    <h1 class="fs-2m font-gs">HERE</h1>
+    <h1 class="fs-lg">HERE</h1>
+    <h1>안녕하세요</h1>
+    <h1 class="noto-sans-kr">안녕하세요</h1>
+
+    <div id="btn">
+        <a href="https://www.naver.com">
+            <div>
+                <p>c</p>
+                <p>l</p>
+                <p>i</p>
+                <p>c</p>
+                <p>k</p>
+            </div>
+        </a>
+    </div>
+</body>
+
+</html>
