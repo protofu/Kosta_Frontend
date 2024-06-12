@@ -1,0 +1,43 @@
+body {
+    margin: 40px;
+    padding: 20px;
+
+}
+.box1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: black 2px solid;
+    margin: 10px;
+    padding: 10px;
+}
+
+.box2 {
+
+    display: table-cell;
+    vertical-align: middle;
+    border: black 2px solid;
+    margin: 10px;
+    padding: 10px;
+}
+
+
+.fir {
+    background-color: beige;
+    padding: 10px;
+    margin: 10px;
+}
+
+.sec {
+    background-color: #203040;
+    padding: 10px;
+    margin: 10px;
+    color: white;
+}
+
+.nimg {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    padding: 10px;
+}

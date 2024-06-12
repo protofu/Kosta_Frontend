@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main>h1 {
+            background-color: aqua;
+        }
+
+        #main h1 {
+            background-color: forestgreen;
+        }
+
+        #main>h2 {
+            background-color: aqua;
+        }
+
+        /* #main h2 {
+            background-color: forestgreen;
+        } */
+
+        #main>ul>li>h2 {
+            background-color: blue;
+        }
+
+        #main>ul h2 {
+            color: rebeccapurple;   
+        }
+        #main h1, 
+        #main h2 {
+            border: red 3px solid;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>test tagg</h1>
+    <div id="main">
+        <h1>css 선택자</h1>
+        <h2>범위 선택자</h2>
+        <ul>
+            <li>
+                <h1>자손 선택자</h1>
+            </li>
+            <li>
+                <h2>후손 선택자</h2>
+            </li>
+            <li>동위 선택자</li>
+        </ul>
+    </div>
+    <h1>test tag</h1>
+    <h2>test tag</h2>
+    <h1>test tag</h1>
+    <h2>test tag</h2>
+    <h1>test tag</h1>
+    <h2>test tag</h2>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+/* h1태그 넣기 */
+
+.first_box {
+    border: black 3px solid;
+    border-radius: 2rem;
+    margin: 20px;
+    padding: 10px;
+}
+
+/* 이미지 삽입하기 */
+
+.second_box {
+    border: bisque 3px solid;
+    border-radius: 2rem;
+    margin: 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.dimg {
+    width: 300px;
+    height: auto;
+}
+
+/* 공간 분할 태그 div */
+.box3 {
+    border: aqua 3px solid;
+}
+
+.span_tag {
+    border: black 3px solid;
+}
+
+.heading {
+    border: red 3px solid;
+}
+
+.p_tag {
+    border: yellow 3px solid;
+}
+
+/* input */
+
+.pass {
+    border-radius: 2rem;
+}
+.tarea {
+    padding: 10px;
+}
+

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>     
+        * {
+            margin: 0;
+            padding: 0;
+            }
+        /* 반응 선택자 */
+        .box {
+            width: 50%;
+            border: black 3px solid;
+        }
+        .box:hover {
+            background-color: goldenrod;
+        }
+        .box:active {
+            color:aqua;
+        }
+        
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        a:hover {
+            color: black;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+    </style>
+    <style>
+        /* input[type=checkbox]:checked {
+            height: 20px;
+            width: 20px;
+            margin: 20px;
+            padding: 20px;
+        } */
+        input[type=text]:focus {
+            padding: 10px;
+            background-color: gray;
+        }
+    </style>
+    <style>
+        #view+div {
+            border: black 3px solid;
+            display: none;
+        }
+        #view:checked+div {
+            display:block;
+        }
+        #view {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- 반응 선택자 -->
+    <h1 class="box">안녕안녕</h1>
+    <a href="#">test</a>
+
+    <hr>
+
+    <!-- 상태 선택자 -->
+     <input type="checkbox" id="chk"> 안녕 <br><hr>
+     <input type="text" name="" id=""> 여기야! <br><hr>
+     <label for="view">plz click to see</label> <br>
+     <input type="checkbox" name="" id="view"> 여기도 있어!
+     <div>
+        <h3>간단한 토글 처리</h3>
+        <p>체크박스를 이용해서 토글 기능을 구현할 수 있습니다.</p>
+     </div>
+     
+</body>
+</html>
