@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #wrap {
+            width: 600px;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: repeat(4, 100px);
+            margin: 0 auto;
+            /* grid-template-areas: 
+            "header header header"
+            "sidebar-left main sidebar-right"
+            "footer footer footer";
+            grid-template-rows: auto 1fr auto;
+            grid-template-columns: auto 1fr auto; */
+        }
+
+        #wrap div {
+            color: blue;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        #header {
+            background-color: forestgreen;
+            grid-column: 1/13;
+            grid-row: 1/2;
+        }
+
+        #aside1 {
+            grid-row: 2/4;
+            grid-column: 1/4;
+            background-color: aquamarine;
+        }
+
+        #main {
+            grid-row: 2/4;
+            grid-column: 3/11;
+            background-color: chocolate;
+        }
+
+        #aside2 {
+            grid-row: 2/4;
+            grid-column: 11/13;
+            grid-column-start: 11;
+            background-color: aquamarine;
+        }
+
+        #footer {
+            grid-row: 4/4;
+            grid-column: 1/13;
+            background-color: cornsilk;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">header</div>
+        <div id="aside1">aside1</div>
+        <div id="main">main</div>
+        <div id="aside2">aside2</div>
+        <div id="footer">footer</div>
+    </div>
+</body>
+</html>

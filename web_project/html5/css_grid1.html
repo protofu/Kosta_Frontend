@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap {
+            display: grid;
+            /* grid-template-columns: 200px 200px 200px; */
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: minmax(100px, auto);
+            margin-bottom: 20px;
+        }
+        
+        .wrap1 {
+            display: grid;
+            /* grid-template-columns: 200px 200px 200px; */
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-rows: minmax(100px, auto);
+            
+        }
+        
+        .wrap2 {
+            display: grid;
+            /* grid-template-columns: 200px 200px 200px; */
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-rows: minmax(100px, auto);
+            
+        }
+
+        .items {
+            margin: 1px;
+            /* padding: 10px; */
+            border: black 1px solid;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="items">1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+        <div class="items">2. Praesent fermentum aliquam porta. Ut gravida ut lorem id rutrum.</div>
+        <div class="items">3. Ut gravida lorem fringilla risus rhoncus vestibulum. Nulla facilisi.</div>
+        <div class="items">4. Nunc est libero, suscipit quis nisi tincidunt, convallis mollis sem.</div>
+        <div class="items">5. Nulla egestas a est varius pretium.</div>
+    </div>
+    <div class="wrap1">
+        <div class="items">1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+        <div class="items">2. Praesent fermentum aliquam porta. Ut gravida ut lorem id rutrum.</div>
+        <div class="items">3. Ut gravida lorem fringilla risus rhoncus vestibulum. Nulla facilisi.</div>
+        <div class="items">4. Nunc est libero, suscipit quis nisi tincidunt, convallis mollis sem.</div>
+        <div class="items">5. Nulla egestas a est varius pretium.</div>
+    </div>
+    <div class="wrap2">
+        <div class="items">1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+        <div class="items">2. Praesent fermentum aliquam porta. Ut gravida ut lorem id rutrum.</div>
+        <div class="items">3. Ut gravida lorem fringilla risus rhoncus vestibulum. Nulla facilisi.</div>
+        <div class="items">4. Nunc est libero, suscipit quis nisi tincidunt, convallis mollis sem.</div>
+        <div class="items">5. Nulla egestas a est varius pretium.</div>
+    </div>
+</body>
+</html>

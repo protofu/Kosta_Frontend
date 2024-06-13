@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 600px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-areas:
+                "header header header"
+                "sidebar-left main sidebar-right"
+                "footer footer footer";
+            grid-template-rows: auto 1fr auto;
+            grid-template-columns: auto 1fr auto;
+        }
+
+        .container div {
+            text-align: center;
+        }
+
+        .header {
+            grid-area: header;
+            height: 50px;
+            background-color: gray;
+        }
+
+        .sidebar-left {
+            grid-area: sidebar-left;
+            width: 150px;
+            background-color: coral;
+        }
+
+        .main {
+            grid-area: main;
+        }
+
+        .sidebar-right {
+            grid-area: sidebar-right;
+            width: 150px;
+            background-color: coral;
+        }
+
+        .footer {
+            grid-area: footer;
+            background-color: aqua;
+            height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">header</div>
+        <div class="sidebar-left">
+            <ul>
+                <li>111</li>
+                <li>12</li>
+                <li>131</li>
+                <li>141</li>
+                <li>151</li>
+            </ul>
+        </div>
+        <div class="main">
+            <h1>main</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum aliquam porta. Ut gravida ut
+                lorem id rutrum. Ut gravida lorem fringilla risus rhoncus vestibulum. Nulla facilisi. Nunc est libero,
+                suscipit quis nisi tincidunt, convallis mollis sem. Nulla egestas a est varius pretium. Proin ornare
+                dapibus sem nec aliquet. Sed eget interdum est. Duis vel dui eu mauris ultrices condimentum tempus
+                suscipit lacus. Donec ut elementum felis. Aliquam suscipit neque non massa vehicula, sit amet pretium
+                est ultrices.</p>
+        </div>
+        <div class="sidebar-right">
+            <ul>
+                <li>111</li>
+                <li>12</li>
+                <li>131</li>
+                <li>141</li>
+                <li>151</li>
+            </ul>
+        </div>
+        <div class="footer">footer</div>
+    </div>
+</body>
+
+</html>
