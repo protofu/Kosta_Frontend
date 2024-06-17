@@ -1,3 +1,4 @@
+
 // console.log("hi");
 
 // alert("hi");
@@ -36,7 +37,7 @@ var label = "Naver";
 var href_str = "https://www.naver.com";
 console.log(`<a href="${href_str}">${label}</a>`)
 
-
+// test
 // 변수
 /*
 변수 : 특정 데이터를 저장 -> 이후에 참조
@@ -64,4 +65,8 @@ while (false) {
     let num = 10;
 }
 
-console.log(num);
+// console.log(num);
+
+const pi = 3.141592;
+
+console.log(pi);
