@@ -70,3 +70,44 @@ while (false) {
 const pi = 3.141592;
 
 console.log(pi);
+
+// const 는 이후 변환 불가.
+// pi = 2;
+
+// console.log(pi);
+
+// 호이스팅
+console.log(num3);
+var num3;
+
+console.log(num5);
+// console.log(num6);
+
+var num5 = 10;
+let num6 = 22;
+
+
+// 대입 연산 : 변수 = 값(리터럴) 또는 변수
+let num7 = num6;
+// let num7 = 1000;
+console.log(num7);
+
+
+// 복합 대입 연산자
+// += => 변수 += 10 => 변수 = 변수 + 10
+
+// let names = prompt('이름 입력');
+
+// console.log(names);
+
+let year = prompt('연도');
+
+console.log(year, typeof(year));
+
+let num_year = Number(year);
+
+console.log(num_year, typeof(num_year));
+
+
+// 문자열 => 숫자 타입 변경
+// Number(문자열)
