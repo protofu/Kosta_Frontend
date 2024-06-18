@@ -8,11 +8,17 @@
 
 let num;
 let check_ = false;
-const goal_num = Math.floor(Math.random() * 100); 
+const goal_num = Math.floor(Math.random() * 100);
 
-for (let i=0;i<10;i++) {
+for (let i = 0; i < 10; i++) {
     num = prompt('숫자를 입력하세요.(1~100)');
 
+    while (isNaN(num)) {
+        if (isNaN(num)) {
+            num = prompt('문자말고 숫자를 입력하세요.(1~100)');
+        }
+    }
+    
     if (goal_num > num) {      // 입력한 숫자가 목표보다 작으면
         console.log('하이');
     } else if (goal_num < num) {        // 입력한 숫자가 목표보다 크면
@@ -27,4 +33,4 @@ for (let i=0;i<10;i++) {
     }
 }
 
-if (!check_) {console.log(`10번 끝! 실패! 정답은 ${goal_num} 이었습니다.`)}
+if (!check_) { console.log(`10번 끝! 실패! 정답은 ${goal_num} 이었습니다.`) }
