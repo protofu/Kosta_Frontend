@@ -18,11 +18,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const editForm = document.querySelector('#editForm');
     const idx = document.querySelector('#idx');
 
-
     // 기존 저장된 멤버를 로드
     if (localStorage.getItem('members')) {
         const members = JSON.parse(localStorage.getItem('members'));
-        members.forEach(member => addMemberToList(member.id, member.pw, member.name, member.key));
+        members.forEach((member, index) => addMemberToList(member.id, member.pw, member.name, index));
     }
 
     // 회원 저장 폼 제출 시
@@ -38,12 +37,13 @@ document.addEventListener('DOMContentLoaded', () => {
         // 새로운 멤버를 저장할 변수 생성
         const new_member = new Member(input_userId.value, input_userPw.value, input_userName.value);
 
-        addMemberToList(new_member.id, new_member.pw, new_member.name, new_member.key);
-
         // localStorage에 저장
         const members = localStorage.getItem('members') ? JSON.parse(localStorage.getItem('members')) : [];
         members.push(new_member);
         localStorage.setItem('members', JSON.stringify(members));
+
+        // 새로운 멤버를 목록에 추가
+        addMemberToList(new_member.id, new_member.pw, new_member.name, members.length - 1);
 
         // 폼 초기화
         regForm.reset();
@@ -62,17 +62,16 @@ document.addEventListener('DOMContentLoaded', () => {
         // 기존 멤버 업데이트
         const key = parseInt(idx.value);
         const members = JSON.parse(localStorage.getItem('members'));
-        const memberIndex = members.findIndex(member => member.key === key);
 
-        if (memberIndex !== -1) {
-            members[memberIndex].id = input_eId.value;
-            members[memberIndex].pw = input_ePw.value;
-            members[memberIndex].name = input_eName.value;
+        if (members[key]) {
+            members[key].id = input_eId.value;
+            members[key].pw = input_ePw.value;
+            members[key].name = input_eName.value;
             localStorage.setItem('members', JSON.stringify(members));
 
             // 화면 업데이트
             member_list.innerHTML = '';
-            members.forEach(member => addMemberToList(member.id, member.pw, member.name, member.key));
+            members.forEach((member, index) => addMemberToList(member.id, member.pw, member.name, index));
         }
 
         // 폼 초기화 및 수정 폼 숨기기
@@ -84,16 +83,10 @@ document.addEventListener('DOMContentLoaded', () => {
     function addMemberToList(id, pw, name, key) {
         const new_member = document.createElement('tr');
         new_member.setAttribute('data-key', key);
-        const membersString = localStorage.getItem('members');
-        let leng = 0;
-        if (membersString) {
-            const membersArray = JSON.parse(membersString);
-            leng = membersArray.length;
-        }
 
         // 각 내용을 저장
         const mem_idx = document.createElement('td');
-        mem_idx.textContent = leng;
+        mem_idx.textContent = key;
         const mem_id = document.createElement('td');
         mem_id.textContent = id;
         const mem_pw = document.createElement('td');
@@ -109,10 +102,10 @@ document.addEventListener('DOMContentLoaded', () => {
             document.querySelector('#reg').style.display = 'none';
 
             const members = JSON.parse(localStorage.getItem('members'));
-            const member = members.find(member => member.key === key);
+            const member = members[key];
 
             if (member) {
-                idx.value = member.key;
+                idx.value = key;
                 input_eId.value = member.id;
                 input_ePw.value = member.pw;
                 input_eName.value = member.name;
@@ -128,8 +121,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // localStorage에서 삭제
             const members = JSON.parse(localStorage.getItem('members'));
-            const updated_members = members.filter(member => member.key !== key);
+            const updated_members = members.filter((member, index) => index !== key);
             localStorage.setItem('members', JSON.stringify(updated_members));
+
+            // 화면 업데이트
+            member_list.innerHTML = '';
+            updated_members.forEach((member, index) => addMemberToList(member.id, member.pw, member.name, index));
         });
 
         // 각 내용을 new_member에 저장
