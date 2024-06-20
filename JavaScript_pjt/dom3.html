@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let menus = [
+            {name : '아메리카노', price : 3000},
+            {name : '아이스 아메리카노', price : 2500},
+            {name : '라떼', price : 3500}
+        ]
+
+
+        // load
+        document.addEventListener('DOMContentLoaded', ()=>{
+            // 1. target (내가 새롭게 위치할 위치) 엘리먼트 캐스팅
+            const wrap = document.querySelector('#wrap');
+            // 2. 새로운 엘리먼트 객체 생성
+            // const newEl = document.createElement('h2');
+            // console.log(newEl);
+            // //    속성, 스타일..
+            // newEl.textContent = '동적으로 생성한 h2 태그';
+            // newEl.style.textAlign = 'center';
+            // newEl.style.color = 'green';
+            // newEl.style.backgroundColor = 'beige';
+            // // 3. 타깃에 새로운 엘리먼트 추가
+            // wrap.appendChild(newEl);
+            // // 이미지 태그 생성
+            // const img_el = document.createElement('img');
+            // img_el.setAttribute('src', './image/naver.jpg');
+            // wrap.appendChild(img_el);
+       
+            // menus 반복해서 appendChild
+            menus.forEach((item, idx) => {
+                // div > h3(name), p(price)
+                const newDiv = document.createElement('div');
+                const newH3 = document.createElement('h3');
+                newDiv.setAttribute('class','box');
+                newH3.textContent=item.name;
+                const newP = document.createElement('p');
+                newP.textContent=`${item.price}원`;
+                newDiv.appendChild(newH3);
+                newDiv.appendChild(newP);
+
+                wrap.appendChild(newDiv);
+
+            })
+
+
+        })
+    </script>
+    <style>
+        #wrap {
+            display: flex;
+        }
+
+        .box {
+            border: black 1px solid;
+            width: 150px;
+            height: 100px;
+            
+        }
+    </style>
+</head>
+<body>
+    <h3>title</h3>
+    <div id="wrap">good</div>
+</body>
+</html>

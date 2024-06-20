@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 키보드 이벤트
+        document.addEventListener('DOMContentLoaded', ()=>{
+            const textarea = document.querySelector('textarea');
+            textarea.addEventListener('keyup',(e)=>{
+                const str_len = e.currentTarget.value.length;
+                const cnt_el = document.getElementById('cnt');
+                cnt_el.textContent = str_len;
+                if (str_len > 100) {
+                    alert('초과');
+                }
+            });
+        });
+
+        const sel = document.getElementById('sel');
+        const h2_print = document.querySelector('h2.print');
+
+        sel.addEventListener('change', (e) => {
+            const options = event.currentTarget.options;
+            const idx = event.currentTarget.options.selectedIndex;
+            h2_print.textContent = `선택 항목 : ${options[idx].textContent}`;
+        })
+
+        const h3_output = document.getElementById('output');
+        const radios = document.querySelectorAll('[name=lang]');
+    
+        radios.forEach((radio)=>{
+            radio.addEventListener('change',(e)=>{
+                const current = event.currentTarget;
+                if (current.checked) {
+                    h3_output.textContent = `선택언어 : ${current}`;
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    <h3>언어</h3>
+    <input type="radio" name="lang" id="" value="java"><span>java</span>
+    <input type="radio" name="lang" id="" value="html"><span>html</span>
+    <input type="radio" name="lang" id="" value="js"><span>js</span>
+    <h3 id="output">선택 : </h3>
+
+    <h2 class="print"></h2>
+    <select id="sel">
+        <option>HTML5</option>
+        <option>css</option>
+        <option>js</option>
+        <option>ts</option>
+        <option>jq</option>
+    </select>
+    <hr>
+    <!-- 글자수 표현 -->
+    <h1><span id="cnt">0</span>/ 100</h1>
+    <textarea cols="20" rows="10"></textarea>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 브라우저 주소창
+        console.log(location.href);
+        function gonaver() {
+            location.href = 'https://www.naver.com';
+        };
+        // onload 모든소스가 렌더된 후 적용
+        window.onload = function () {
+            console.log('onload : page load comp');
+        };
+        // event 연결
+        document.addEventListener('DOMContentLoaded', function () {
+            console.log('Document obj all read, event ocurr');
+            let h1_el = document.getElementById('h1');
+            console.log(h1_el.innerHTML);
+            // 캐스팅 : 문서 객체 생성
+            const div_el = document.querySelector('div');
+            console.log(div_el);
+            // 텍스트 변경, 컬러, padding, margin, font-size
+            div_el.textContent = 'HEADER';
+            // div_el.style.backgroundColor='red';
+            // div_el.style.color='blue';
+            div_el.style.padding='10px';
+            div_el.style.fontSize='50px';
+
+            const h3s = document.querySelectorAll('h3');
+            console.log(h3s);
+
+            h3s.forEach((itm, idx)=>{
+                itm.innerHTML = itm.innerHTML +`<i>${idx}</i>`;
+                itm.style.color='green';
+
+            })
+
+            const a_el = document.querySelector('a');
+            let href_str = a_el.getAttribute('href');
+            console.log(href_str);
+            a_el.setAttribute('href', 'https://github.com');
+
+        });
+
+
+
+
+    </script>
+</head>
+
+<body>
+    <a href="https://www.naver.com">Naver</a>
+
+    <h3>header - 3</h3>
+    <h3>header - 3</h3>
+    <h3>header - 3</h3>
+    
+    <h1 onclick="gonaver()" id="h1">페이지 이동</h1>
+    <div>test</div>
+</body>
+
+</html>
