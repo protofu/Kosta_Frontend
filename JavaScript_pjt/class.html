@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class</title>
+    <script>
+        // 객체 => {}
+        // 객체 생성을 위한 틀 =>
+        // new 틀() => 틀에서 정의된 변수나 함수로 이루어진 객체 생성
+        // class 클래스이름 {변수, 함수} => new 클래스이름()
+
+        let obj_stu = {
+            name: '김밥',
+            age: 19,
+            major: '분식'
+        }
+
+        class Student {
+            constructor(name, age, major) {
+                this.name = name;
+                this.age = age;
+                this.major = major;
+            }
+        }
+
+        // let student1 = new Student('라면', 12, '분식');
+
+        // console.log(student1);
+
+        const students = [];
+        students.push(new Student('단무지', 15, '분식'));
+        students.push(new Student('단무지', 15, '분식'));
+        students.push(new Student('단무지', 15, '분식'));
+
+        console.log(students);
+
+
+        let saved_data = localStorage.getItem(students);
+        console.log(saved_data);
+        if (saved_data==null) {
+            localStorage.setItem('students', students);
+        }
+
+        localStorage.removeItem('members');
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
