@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Member(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        const member = new Member('짱구', 5);
+        const ls_member = JSON.stringify(member);
+        localStorage.setItem('member', ls_member);
+        console.log(member);
+
+        localStorage.removeItem('member');
+
+        document.addEventListener('DOMContentLoaded', ()=>{
+            const btn = document.querySelector('#addBtn');
+            // btn.addEventListener('click', ()=>{
+            //     alert('click');
+            // });
+            
+            const clickFunc = () => {
+                alert("click");
+            };
+            btn.addEventListener('click', clickFunc);
+        });
+    </script>
+</head>
+<body>
+    <button id="addBtn">Say CLick!</button>
+</body>
+</html>
