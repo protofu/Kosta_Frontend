@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"
+        integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+    <script>
+        $().ready(() => {
+            // 문서 객체 생성
+            $('<h1></h1>').html("1_Hello!!!!!!!!!!").appendTo('body');
+            $('<h1>2_Hello!!!!!!!!!!</h1>').appendTo('body');
+            $('<img>').attr('src', '../web_project/html5/image/dog.jpg').addClass('img').appendTo('body').prependTo('body');
+
+            // $(A).appendTo(B)     : B 대상 (맨 아래)
+            // $(A).prependTo(B)    : B 대상 (맨 위)
+            // $(A).append(B)    : A 대상 (맨 아래)
+            // $(A).prepend(B)    : A 대상 (맨 위)
+
+            // $(selector).append(content, content, content, ...)
+            // $(selector).append(fn)
+
+            let html1 = '<a href="#">test</a>'
+            let html2 = '<p>Test</p>';
+            let html3 = '<div>div Test</div>';
+
+            $('body').append(html1, html2, html3);
+
+
+            let links = [
+                { name: '네이버', url: 'https://www.naver.com' },
+                { name: '구글', url: 'https://www.google.com' },
+                { name: '페이스북', url: 'https://www.facebook.com' }
+            ];
+
+            $.each(links, function (idx, item) {
+
+                let html = `
+                    <tr>
+                        <td>${item.name}</td>
+                        <td>${item.url}</td>
+                    </tr>
+                    `
+                $('#list').append(html)
+            })
+
+            let productList = [];
+            let cart = [];
+
+        })
+    </script>
+    <style>
+        /* .img{
+            border: 1px solid yellow;
+        } */
+    </style>
+</head>
+
+<body>
+    <h1></h1>
+    <img>
+    <table border="1">
+        <thead>
+            <tr>
+                <td>이름</td>
+                <td>주소</td>
+            </tr>
+        </thead>
+        <tbody id="list">
+
+        </tbody>
+    </table>
+</body>
+
+</html>

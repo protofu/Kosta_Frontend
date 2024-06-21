@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"
+        integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+    <script>
+        // 문서 개체 컨트롤 : 
+        // css(), arrt(), removeAttr(), addClass(), removeClass()
+        // html(), text()
+        // remove(), empty()
+        $().ready(()=>{
+
+            // $('h2').addClass('box');
+            // $('h2').removeClass('center');
+            console.log($('a').attr('href'));       // getter
+            $('a').attr('href', 'https://www.facebook.com');
+            // $('img').attr('src', '../web_project/html5/image/dog.jpg');
+            // $('img').attr({
+            //     src : '../web_project/html5/image/dog.jpg',
+            //     width : 700,
+            //     height : 500
+            // });
+            $('img').attr('height', function(index){
+                return (index+1)*50;
+            })
+            $('img').first().removeAttr("height");
+            
+            // attr(속성이름) : read
+            // attr(속성이름, 값) : set
+            // attr(속성이름, callback) : set
+            // attr({}) : 다중 속성 set
+
+            // css(속성이름) : read
+            // css(속성이름, 값 || callback) : set
+            // css({}) : set
+
+            // html() : innerHTML
+            // html() : textContent
+
+            // read
+            // console.log('html()=> ', $('#menu1').html()); // 태그까지 가져옴
+            // console.log('text()=> ', $('#menu2').text()); // 태그 안의 내용
+            // $('#menu1').html("<h1>김밥!!!!!!!!!!!!!</h1>");
+            // $('#menu2').text("<h1>김밥!!!!!!!!!!!!!</h1>");
+
+            $('div').html(function(idx, html){
+                console.log(html);
+                $(this).html(`<h1>${html}</h1>`)
+            });
+
+            // 엘리먼트 삭제 : 부모 엘리먼트 캐스팅 삭제 대상 캐스팅 부모에게 삭제요청
+            $('#menu3').remove();
+        });
+
+    </script>
+    <style>
+        .box {
+            background-color: forestgreen;
+            color: blue;
+            float: left;
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            margin: 10px;
+        }
+        
+        .center {
+            text-align: center;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div id="menu1">
+        <span>Menu Text - 1</span>
+    </div>
+    <div id="menu2">
+        <span>Menu Text - 2</span>
+    </div>
+    <div id="menu3">
+        <span>Menu Text - 3</span>
+    </div>
+
+    <img src="../web_project/html5/image/dog.jpg" alt="">
+    <img src="../web_project/html5/image/dog.jpg" alt="">
+    <img src="../web_project/html5/image/dog.jpg" alt="">
+    <img src="../web_project/html5/image/dog.jpg" alt="">
+
+    <a href="https://www.naver.com">Naver</a>
+
+    <h2 class="center">김밥</h2>
+    <h2 class="center">김밥</h2>
+    <h2 class="center">김밥</h2>
+    <h2 class="center">김밥</h2>
+    <h2 class="center">김밥</h2>
+</body>
+
+</html>
