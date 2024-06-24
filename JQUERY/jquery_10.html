@@ -9,40 +9,42 @@
         integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
     <script>
 
-        $().ready(()=>{
-            // $.ajax({options})
+        $().ready(() => {
+            // $.ajax({options}) <- 많이 사용
             // $.ajax(url, {options})
-            $.ajax('./data/data.xml', {
-                success : function(data){
-                    // http Code : 200~
-                    console.log(typeof(data));
-                    console.log(data);
-                    // $('body').append(data);
-                    
-                    // Json 파일 파싱
-                    // data.forEach(e => {
-                    //     $('body').append(`<h1>${e.name} - ${e.price}원</h1>`);
-                    // });
-
-                    // xml 파일 파싱
-                    $(data).find('product').each(function(){
+            $.ajax({
+                url: './data/data.xml',
+                success: function (data) {
+                    $(data).find('product').each(function () {
                         let name = $(this).find('name').text();
                         let price = $(this).find('price').text();
-                        // console.log(name, price);
-
                         $('body').append(`<h1>${name} - ${price}</h1>`);
                     });
 
 
+
                 },
                 // 404 Not Found <- 경로 문제 다수
-                error : function(request, status, error){
+                error: function (request, status, error) {
                     console.log(request);
                     console.log(status);
                     console.log(error);
                 }
             });
+
+            setTimeout(function () {
+                // $.get('./data/data.html', function (data) {
+                //     alert(data);
+                // })
+            }, 5000);
         });
+
+        $.getJSON(' ', function(data){
+            console.log(data);
+            data.forEach(e => {
+                console.log(e);
+            });
+        })
 
     </script>
 </head>
