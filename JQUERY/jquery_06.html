@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"
+        integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+    <script>
+
+        $(document).ready(function () {
+
+            $('h1').click(function (e) {
+                $(this).html(function (idx, html) {
+                    return html + '+';
+                });
+            })
+
+            // 이벤트 처리 : on 메서드, 이벤트 메서드
+            // $(selector).on("이벤트이름", function(event){});
+            // $(selector).on({'이벤트이름': fn, '이벤트이름2': fn, ...});
+            // $('h1').on('click', function () {
+            //     // this : 이벤트가 발생한 엘리먼트 객체
+            //     $(this).html(function (idx, html) {
+            //         return html + '+';
+            //     });
+            // });
+
+            $('h1').on({
+                // 속성 : 이벤트 이름, 값 : 핸들러 함수
+                mouseenter: function () {
+                    $(this).addClass('over');
+                },
+                mouseleave: function () {
+                    $(this).removeClass('over');
+                }
+            });
+            let total = 0;
+
+            $('div').click(function () {
+                // 이벤트 발생 div -> this
+                // $*('h3', this) -> 이벤트가 발생한 div 안에 있는 h3 선택
+                let h3 = $('h3', this).text();
+                let p = $('p', this).text();
+                alert(h3 + ' : ' + p);
+
+                $('#list').append(`<h3>${h3} : ${p}</h3>`);
+                // $('#list').append(`<h3>총 금액 : ${total}</h3>`);
+
+            });
+            // 기존 이벤트 제거 : a, form, action
+            $('a').click(function (e) {
+                console.log(e.isDefaultPrevented())
+                e.preventDefault();
+                console.log(e.isDefaultPrevented())
+                // return false;
+            });
+
+
+            $('form').submit(function (e) {
+                // 대충 유효성 검사임
+                let uname = $('#uname').val();
+                console.log(uname)
+                if (uname.trim()==''){
+                    alert('input your name');
+                    e.preventDefault();
+                }
+            });
+
+        });
+    </script>
+    <style>
+        h1,
+        div {
+            border: 1px solid black;
+            margin: 10px;
+        }
+
+        div {
+            width: 150px;
+            height: 150px;
+            float: left;
+        }
+
+        #list {
+            width: 90%;
+            padding: 10px;
+            overflow: auto;
+        }
+
+        .over {
+            background-color: aquamarine;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>header - 0</h1>
+    <h1>header - 1</h1>
+    <h1>header - 2</h1>
+
+    <hr>
+
+    <form accept="https://www.naver.com">
+        <input type="text" id="uname" value="cool">
+        <input type="submit">
+    </form>
+
+    <hr>
+
+    <a href="https://www.naver.com">naver</a>
+
+    <hr>
+
+    <div data-index="0">
+        <h3>제육</h3>
+        <p>4,000원</p>
+        <input type="hidden" value="0">
+    </div>
+    <div>
+        <h3>돈까스</h3>
+        <p>5,000원</p>
+    </div>
+    <div>
+        <h3>햄버거</h3>
+        <p>4,500원</p>
+    </div>
+    <div id="list">
+
+    </div>
+</body>
+
+</html>
