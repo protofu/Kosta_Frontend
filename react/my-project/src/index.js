@@ -2,24 +2,31 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import BlogMain from './Components/blog/BlogMain';
-import Greeting from './Components/blog/Greeting';
-import MyBtn from './Components/MyBtn';
-import ToolBar from './Components/ToolBar';
+// import BlogMain from './Components/blog/BlogMain';
+// import Greeting from './Components/blog/Greeting';
+// import MyBtn from './Components/MyBtn';
+// import ToolBar from './Components/ToolBar';
+// import Counter from './Components/Counter';
+// import Toggle from './Components/Toggle';
+// import ConfirmBtn from './Components/ConfirmBtn';
+// import MainPage from './Components/MainPage';
+// import NameForm from './Components/NameForm';
+// import SignUp from './Components/signUp/SignUp';
+// import Reservation from './Components/Reservation';
+import SignUpDialog from './Components/SignUpDialog';
 
 
-const onClickLoginHandle = (e) => {
-  alert('To Login Page...')
-}
-const onClickLogoutHandle = (e) => {
-  alert('Bye')
-}
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ToolBar isLogin={true} onClickLoginHandle={onClickLoginHandle} onClickLogoutHandle={onClickLogoutHandle}/>
-    <Greeting isLogin={true}/>
-    <MyBtn />
+    {/* <ToolBar isLogin={true} onClickLoginHandle={onClickLoginHandle} onClickLogoutHandle={onClickLogoutHandle}/> */}
+    {/* <MainPage /> */}
+    {/* <Toggle /> */}
+    {/* <NameForm /> */}
+    {/* <ConfirmBtn /> */}
+    {/* <SignUp /> */}
+    {/* <Reservation /> */}
+    <SignUpDialog />
   </React.StrictMode>
 );
 
