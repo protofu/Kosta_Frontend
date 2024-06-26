@@ -1,0 +1,22 @@
+/* Header.module.css */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+    background-color: #f8f9fa; /* light grey background */
+    border-bottom: 2px solid #e9ecef; /* subtle bottom border */
+}
+
+.title {
+    font-size: 2.5rem; /* large font size */
+    font-weight: bold; /* bold text */
+    color: #343a40; /* dark grey color */
+    margin: 0; /* no margin */
+}
+
+.desc {
+    font-size: 1.25rem; /* medium font size */
+    color: #6c757d; /* medium grey color */
+    margin: 10px 0; /* margin on top and bottom */
+}

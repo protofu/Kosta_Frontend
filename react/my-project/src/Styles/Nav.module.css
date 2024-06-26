@@ -1,0 +1,37 @@
+/* Nav.module.css */
+.container {
+    width: 100%;
+    background-color: #f8f9fa; /* dark grey background */
+    padding: 10px 0; /* vertical padding */
+}
+
+.menu {
+    display: flex;
+    justify-content: center; /* center the menu items */
+    list-style-type: none; /* remove default list styling */
+    margin: 0; /* no margin */
+    padding: 0; /* no padding */
+}
+
+.menu li {
+    margin: 0 15px; /* horizontal margin between menu items */
+}
+
+.menu a {
+    color: #000000; /* white text color */
+    text-decoration: none; /* remove underline from links */
+    font-size: 1rem; /* standard font size */
+    font-weight: bold; /* bold text */
+    transition: color 0.3s ease; /* smooth color transition on hover */
+}
+
+.menu a:hover {
+    color: #ffc107; /* gold color on hover */
+}
+
+hr {
+    width: 100%; /* full width */
+    border: 0;
+    border-top: 1px solid #dee2e6; /* subtle top border */
+    margin: 10px 0 0; /* margin on top, no margin on bottom */
+}

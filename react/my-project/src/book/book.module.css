@@ -1,0 +1,21 @@
+.container {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.bookItem {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.bookTitle {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.bookAuthor,
+.bookPages {
+    margin-bottom: 5px;
+}
